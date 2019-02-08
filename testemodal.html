@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>modal</title>
+	<script type="text/javascript">
+		
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		.botaoFechar {
+ 			 right: 0;
+  			margin-right: 15px;
+  			margin-top: 15px;
+		}
+
+		.classeImagem {
+ 			 right: 0;
+  			margin-right: 0px;
+  			margin-top: 15px;
+		}
+
+		#two {
+		    position: absolute;
+		    bottom: 0;
+		    right: 0,
+		    margin-left:100%;		    
+  			margin-top: 15px;
+		   	/*width: 100%;*/
+		    display: none;
+		    height: 900px;
+		    text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<div style="width: 100%; background: #000; color: #FFF" >
+		<button id="botaoAtiva" onclick="chamaModal()">Modal</button>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+	</div>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+	<button id="show2">Click here to show/hide </button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+
+    <div class="modal-content">
+    	
+      <!-- <div class="modal-body"> -->
+      	
+      	
+        <div> 
+        	<div style="position: absolute" class="botaoFechar">
+	      		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          		<span aria-hidden="true">&times;</span>
+	        	</button>
+      		</div>
+        	<img class="img-fluid" src="popup_frota_legal.png" style="width: 100%; height: 100%;"  style="position: relative;"/>
+		</div>   
+      <!-- </div> -->
+      	 
+    </div>
+  </div>
+</div>
+
+<!--div escondida-->
+<div id="two" class="classeImagem">
+    
+    	<div style="position: absolute" class="botaoFechar">
+	      		<button type="button" class="close"  aria-label="Close" id="fechaMensagem">
+	          		<span aria-hidden="true">&times;</span>
+	        	</button>
+      	</div>
+    	<div> 
+        	
+        	<img class="img-fluid" src="popup_frota_legal.png" style="width: 900px; height: 900px;"/>
+		</div>   
+</div>
+	 
+
+      
+
+  
+</script>
+</body>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+	setTimeout(function(){
+		mostraMensagem();
+	});
+
+	$('#fechaMensagem').click(function(){
+		$("#two").hide();
+	});
+});
+	function mostraMensagem(){
+		$("#two").toggle({
+      			width: "toggle"
+    			}, {duration: 1100});  
+	 }
+	
+</script>
+</html>
